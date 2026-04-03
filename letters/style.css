@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #2a2733, #12121a);
+  color: white;
+}
+
+/* layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 15px;
+}
+
+/* editor */
+.editor {
+  background: rgba(20,20,25,0.8);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  margin-top: 10px;
+  background: #111;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* controls */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+select {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* button */
+button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* preview */
+.preview {
+  background: rgba(20,20,25,0.8);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+#previewBox {
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* THEMES */
+
+.default {
+  background: #1a1a1a;
+}
+
+.dark {
+  background: black;
+  color: #ccc;
+}
+
+.romantic {
+  background: #3b1f2b;
+  color: #ffd6e0;
+}
+
+/* FONTS */
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-handwrite {
+  font-family: 'Great Vibes', cursive;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+}

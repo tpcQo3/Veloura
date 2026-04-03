@@ -1,4 +1,3 @@
 function goNext() {
-  // sau này bạn đổi thành trang tạo thư
-  window.location.href = "create.html";
+  window.location.href = "letters/letter_write.html";
 }

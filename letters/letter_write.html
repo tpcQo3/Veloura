@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veloura - Write</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="editor">
+    <h2>Viết thư 💌</h2>
+
+    <textarea id="content" placeholder="Viết điều bạn muốn nói..."></textarea>
+
+    <div class="controls">
+      <select id="theme">
+        <option value="default">Default</option>
+        <option value="dark">Dark</option>
+        <option value="romantic">Romantic</option>
+      </select>
+
+      <select id="font">
+        <option value="inter">Inter</option>
+        <option value="playfair">Playfair</option>
+        <option value="handwrite">Handwriting</option>
+      </select>
+    </div>
+
+    <button onclick="updatePreview()">Xem trước</button>
+  </div>
+
+  <div class="preview">
+    <h3>Preview</h3>
+    <div id="previewBox"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
