@@ -1,105 +1,132 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
+
   background: radial-gradient(circle at top, #2a2733, #12121a);
-  color: white;
+  color: #eee;
 }
 
-/* layout */
-.container {
+.wrapper {
   display: flex;
-  flex-direction: column;
-  padding: 15px;
-  gap: 15px;
+  justify-content: center;
+  padding: 20px;
 }
 
-/* editor */
-.editor {
-  background: rgba(20,20,25,0.8);
-  padding: 15px;
-  border-radius: 12px;
+.card {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(20,20,25,0.75);
+  backdrop-filter: blur(12px);
+
+  padding: 20px;
+  border-radius: 16px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #e0c27a;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+input, textarea, select {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
 }
 
 textarea {
-  width: 100%;
-  height: 120px;
-  margin-top: 10px;
-  background: #111;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
+  height: 140px;
+  resize: none;
 }
 
-/* controls */
-.controls {
+.toolbar {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 8px;
+  margin-top: 5px;
 }
 
-select {
-  flex: 1;
-  padding: 8px;
-  border-radius: 6px;
-}
-
-/* button */
-button {
-  margin-top: 10px;
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(135deg, #d4af37, #b8962e);
+.toolbar button {
+  padding: 6px 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 6px;
+  background: #5a5ae6;
+  color: white;
   cursor: pointer;
 }
 
-/* preview */
-.preview {
-  background: rgba(20,20,25,0.8);
-  padding: 15px;
-  border-radius: 12px;
+.count {
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: right;
+  color: #aaa;
 }
 
-#previewBox {
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row > div {
+  flex: 1;
+}
+
+.hint {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.preview-box {
+  margin-top: 15px;
   padding: 15px;
+  background: rgba(255,255,255,0.05);
   border-radius: 10px;
 }
 
-/* THEMES */
+#preview {
+  margin-top: 10px;
+}
 
+/* THEMES */
 .default {
-  background: #1a1a1a;
+  color: #eee;
 }
 
 .dark {
-  background: black;
-  color: #ccc;
+  color: #bbb;
 }
 
 .romantic {
-  background: #3b1f2b;
-  color: #ffd6e0;
+  color: #ffcad4;
 }
 
-/* FONTS */
-
-.font-inter {
-  font-family: 'Inter', sans-serif;
-}
-
-.font-playfair {
-  font-family: 'Playfair Display', serif;
-}
-
-.font-handwrite {
-  font-family: 'Great Vibes', cursive;
+/* BUTTON */
+.submit {
+  margin-top: 15px;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #d4af37, #b8962e);
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .container {
-    padding: 10px;
+  .card {
+    padding: 15px;
+  }
+
+  .row {
+    flex-direction: column;
   }
 }

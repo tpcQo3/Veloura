@@ -3,42 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veloura - Write</title>
+  <title>Veloura - Viết thư</title>
 
   <link rel="stylesheet" href="style.css">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Inter&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
+<div class="wrapper">
 
-  <div class="editor">
-    <h2>Viết thư 💌</h2>
+  <div class="card">
 
-    <textarea id="content" placeholder="Viết điều bạn muốn nói..."></textarea>
+    <h1>Viết một lá thư 💌</h1>
 
-    <div class="controls">
-      <select id="theme">
-        <option value="default">Default</option>
-        <option value="dark">Dark</option>
-        <option value="romantic">Romantic</option>
-      </select>
+    <!-- Người nhận -->
+    <label>Người nhận</label>
+    <input type="text" id="to">
+
+    <!-- Chủ đề -->
+    <label>Chủ đề</label>
+    <input type="text" id="title">
+
+    <!-- Nội dung -->
+    <label>Nội dung</label>
+
+    <div class="toolbar">
+      <button onclick="wrap('**')">B</button>
+      <button onclick="wrap('*')">I</button>
+      <button onclick="wrap('__')">U</button>
 
       <select id="font">
         <option value="inter">Inter</option>
         <option value="playfair">Playfair</option>
-        <option value="handwrite">Handwriting</option>
       </select>
     </div>
 
-    <button onclick="updatePreview()">Xem trước</button>
-  </div>
+    <textarea id="content" placeholder="Viết lá thư của bạn tại đây..." oninput="updatePreview()"></textarea>
+    <div class="count" id="count">0 / 2000</div>
 
-  <div class="preview">
-    <h3>Preview</h3>
-    <div id="previewBox"></div>
+    <!-- password + expiry -->
+    <div class="row">
+      <div>
+        <label>Mật khẩu (tùy chọn)</label>
+        <input type="text" id="password">
+      </div>
+
+      <div>
+        <label>Thời hạn</label>
+        <select id="expiry">
+          <option>1 ngày</option>
+          <option selected>7 ngày</option>
+          <option>30 ngày</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- URL -->
+    <label>Tùy chỉnh URL</label>
+    <input type="text" placeholder="vd: iloveyou">
+
+    <p class="hint">Tối thiểu 4 ký tự, nếu để trống sẽ random</p>
+
+    <!-- Theme -->
+    <h3>Tùy chỉnh phong cách ✨</h3>
+
+    <label>Theme</label>
+    <select id="theme" onchange="updatePreview()">
+      <option value="default">Default</option>
+      <option value="dark">Dark</option>
+      <option value="romantic">Romantic</option>
+    </select>
+
+    <!-- Preview -->
+    <div class="preview-box">
+      <h3>Xem trước 👀</h3>
+      <div id="preview"></div>
+    </div>
+
+    <button class="submit">Tạo thư</button>
+
   </div>
 
 </div>
