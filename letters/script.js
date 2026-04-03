@@ -1,3 +1,15 @@
+function updateTheme() {
+  const theme = document.getElementById("theme").value;
+
+  console.log("Theme selected:", theme); // 👈 thêm dòng này
+
+  document.body.classList.remove("dark", "romantic");
+
+  if (theme !== "default") {
+    document.body.classList.add(theme);
+  }
+}
+
 function parseMarkdown(text) {
   return text
     .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
@@ -33,16 +45,4 @@ function wrap(symbol) {
     text.substring(end);
 
   updatePreview();
-}
-
-function updateTheme() {
-  const theme = document.getElementById("theme").value;
-
-  // XÓA class cũ
-  document.body.classList.remove("dark", "romantic");
-
-  // ADD class mới
-  if (theme !== "default") {
-    document.body.classList.add(theme);
-  }
 }
