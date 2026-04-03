@@ -2,8 +2,28 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
 
+  background: #f5f5f5;
+  color: #222;
+}
+
+body.dark {
   background: radial-gradient(circle at top, #2a2733, #12121a);
   color: #eee;
+}
+
+body.dark .card {
+  background: rgba(20,20,25,0.8);
+  backdrop-filter: blur(12px);
+}
+
+body.romantic {
+  background: linear-gradient(135deg, #3b1f2b, #1a0f14);
+  color: #ffd6e0;
+}
+
+body.romantic .card {
+  background: rgba(255, 192, 203, 0.08);
+  backdrop-filter: blur(10px);
 }
 
 .wrapper {
@@ -15,7 +35,8 @@ body {
 .card {
   width: 100%;
   max-width: 600px;
-  background: rgba(20,20,25,0.75);
+  background: white;
+  color: #222;
   backdrop-filter: blur(12px);
 
   padding: 20px;
@@ -92,7 +113,10 @@ textarea {
 }
 
 #preview {
-  margin-top: 10px;
+  background: inherit;
+  color: inherit;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 /* THEMES */

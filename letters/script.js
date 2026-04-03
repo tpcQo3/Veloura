@@ -34,3 +34,13 @@ function wrap(symbol) {
 
   updatePreview();
 }
+
+function updateTheme() {
+  const theme = document.getElementById("theme").value;
+
+  document.body.className = ""; // reset
+
+  if (theme !== "default") {
+    document.body.classList.add(theme);
+  }
+}
