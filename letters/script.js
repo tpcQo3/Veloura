@@ -38,8 +38,10 @@ function wrap(symbol) {
 function updateTheme() {
   const theme = document.getElementById("theme").value;
 
-  document.body.className = ""; // reset
+  // XÓA class cũ
+  document.body.classList.remove("dark", "romantic");
 
+  // ADD class mới
   if (theme !== "default") {
     document.body.classList.add(theme);
   }
