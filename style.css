@@ -2,31 +2,51 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #fdf6ec, #f7efe5);
-  color: #3a2e2a;
-  min-height: 100vh;
+
+  /* ❗ KHÔNG SCROLL */
+  height: 100vh;
+  overflow: hidden;
+
+  /* 🌤️ BACKGROUND */
+  background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1470&auto=format&fit=crop") no-repeat center center/cover;
+
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* overlay để làm nền dịu hơn */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 248, 240, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 0;
 }
 
 .container {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  animation: fadeIn 1.2s ease;
+  z-index: 1;
 }
 
+/* 💎 CARD TRONG SUỐT */
 .card {
   width: 100%;
   max-width: 420px;
   margin: auto;
   padding: 25px;
-  background: white;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+
   text-align: center;
-  backdrop-filter: blur(10px);
 }
 
 /* TITLE */
@@ -67,28 +87,11 @@ button {
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
-/* ANIMATION */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 📱 MOBILE TỐI ƯU */
+/* MOBILE */
 @media (max-width: 480px) {
-  .card {
-    padding: 20px;
-    border-radius: 14px;
-  }
-
   h1 {
     font-size: 22px;
   }
