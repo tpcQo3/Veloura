@@ -45,6 +45,21 @@ label {
   color: inherit;
 }
 
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.toolbar select,
+.toolbar input[type="color"] {
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
 /* ===== INPUT ===== */
 input,
 textarea,

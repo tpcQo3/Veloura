@@ -7,8 +7,28 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?
+family=Inter&
+family=Playfair+Display&
+family=Lora&
+family=Merriweather&
+family=Libre+Baskerville&
+family=Crimson+Text&
+family=EB+Garamond&
+family=Cormorant&
+family=DM+Serif+Display&
+family=Roboto&
+family=Montserrat&
+family=Poppins&
+family=Quicksand&
+family=Raleway&
+family=Josefin+Sans&
+family=Space+Mono&
+family=Fira+Code&
+family=Great+Vibes&
+family=Dancing+Script&
+family=Pacifico&
+display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -30,14 +50,31 @@
     <label>Nội dung</label>
 
     <div class="toolbar">
-      <button onclick="wrap('**')">B</button>
-      <button onclick="wrap('*')">I</button>
-      <button onclick="wrap('__')">U</button>
 
-      <select id="font">
-        <option value="inter">Inter</option>
-        <option value="playfair">Playfair</option>
-      </select>
+      <select id="font" onchange="updatePreview()">
+  <option value="Inter">Inter (hiện đại)</option>
+  <option value="Playfair Display">Playfair (luxury)</option>
+  <option value="Lora">Lora (dễ đọc)</option>
+  <option value="Merriweather">Merriweather (blog)</option>
+  <option value="Libre Baskerville">Baskerville (cổ điển)</option>
+  <option value="Crimson Text">Crimson (sách)</option>
+  <option value="EB Garamond">Garamond (hoài niệm)</option>
+  <option value="Cormorant">Cormorant (elegant)</option>
+  <option value="DM Serif Display">DM Serif (title đẹp)</option>
+
+  <option value="Montserrat">Montserrat (clean)</option>
+  <option value="Poppins">Poppins (modern)</option>
+  <option value="Raleway">Raleway (thin đẹp)</option>
+  <option value="Quicksand">Quicksand (soft)</option>
+  <option value="Josefin Sans">Josefin (art)</option>
+
+  <option value="Space Mono">Mono (tech)</option>
+  <option value="Fira Code">Fira Code (code vibe)</option>
+
+  <option value="Great Vibes">Great Vibes (romantic)</option>
+  <option value="Dancing Script">Dancing Script (handwriting)</option>
+  <option value="Pacifico">Pacifico (cute)</option>
+</select>
     </div>
 
     <textarea id="content" placeholder="Viết lá thư của bạn tại đây..." oninput="updatePreview()"></textarea>

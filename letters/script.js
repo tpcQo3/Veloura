@@ -15,34 +15,38 @@ function parseMarkdown(text) {
     .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
     .replace(/\*(.*?)\*/g, "<i>$1</i>")
     .replace(/__(.*?)__/g, "<u>$1</u>")
+    .replace(/`(.*?)`/g, "<code>$1</code>")
     .replace(/\n/g, "<br>");
 }
 
 function updatePreview() {
   const content = document.getElementById("content").value;
-  const theme = document.getElementById("theme").value;
   const preview = document.getElementById("preview");
 
-  preview.className = "";
+  const font = document.getElementById("font").value;
+  const size = document.getElementById("size").value;
+  const color = document.getElementById("color").value;
+  document.getElementById("font").addEventListener("change", updatePreview);
+  document.getElementById("size").addEventListener("change", updatePreview);
+  document.getElementById("color").addEventListener("input", updatePreview);
+
+  // nếu có custom font thì ưu tiên
+  const customFontInput = document.getElementById("customFont");
+  let finalFont = font;
+
+  if (customFontInput && customFontInput.value.trim() !== "") {
+    finalFont = customFontInput.value.trim();
+  }
+
+  // render markdown
   preview.innerHTML = parseMarkdown(content);
 
+  // apply style
+  preview.style.fontFamily = `'${finalFont}', sans-serif`;
+  preview.style.fontSize = size;
+  preview.style.color = color;
+
+  // update counter
   document.getElementById("count").innerText =
     content.length + " / 2000";
-}
-
-function wrap(symbol) {
-  const textarea = document.getElementById("content");
-  const start = textarea.selectionStart;
-  const end = textarea.selectionEnd;
-
-  const text = textarea.value;
-
-  textarea.value =
-    text.substring(0, start) +
-    symbol +
-    text.substring(start, end) +
-    symbol +
-    text.substring(end);
-
-  updatePreview();
 }
