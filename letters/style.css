@@ -1,5 +1,4 @@
 body {
-  background: red !important;
   margin: 0;
   font-family: 'Inter', sans-serif;
 
@@ -163,23 +162,31 @@ textarea {
 
 .row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 🔥 FIX CHÍNH */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 🔥 FIX */
   gap: 12px;
 }
 
 .row input,
 .row select {
   width: 100%;
-  min-width: 0; /* 🔥 cực quan trọng */
+  min-width: 0; /* 🔥 FIX */
 }
 
-.row > div {
-  flex: 1;
+input,
+textarea,
+select,
+label {
+  color: inherit;
+}
+
+::placeholder {
+  color: inherit;
+  opacity: 0.5;
 }
 
 .hint {
-  font-size: 12px;
-  color: #aaa;
+  color: inherit;
+  opacity: 0.6;
 }
 
 .preview-box {
