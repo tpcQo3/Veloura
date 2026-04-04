@@ -77,10 +77,11 @@ button {
 }
 
 label {
-  font-size: 13px;
-  margin-top: 14px;
+  font-size: 12.5px;
+  font-weight: 500;
+  margin-top: 12px;
   display: block;
-  opacity: 0.8;
+  letter-spacing: 0.2px;
 }
 
 input,
@@ -177,7 +178,8 @@ textarea {
 }
 
 .row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
@@ -230,13 +232,8 @@ textarea {
   cursor: pointer;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .card {
-    padding: 15px;
-  }
-
+@media (max-width: 500px) {
   .row {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
