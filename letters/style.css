@@ -68,12 +68,13 @@ body.romantic select {
 
   padding: 20px;
   border-radius: 16px;
-  input,
+}
+
+input,
 textarea,
 select,
 button {
   transition: all 0.3s ease;
-}
 }
 
 label {
@@ -82,6 +83,8 @@ label {
   margin-top: 12px;
   display: block;
   letter-spacing: 0.2px;
+  opacity: 0.7;
+  color: inherit;
 }
 
 input,
@@ -135,21 +138,6 @@ h1 {
   color: #e0c27a;
 }
 
-label {
-  display: block;
-  margin-top: 15px;
-  font-size: 14px;
-}
-
-input, textarea, select {
-  width: 100%;
-  margin-top: 5px;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-  outline: none;
-}
-
 textarea {
   height: 140px;
   resize: none;
@@ -179,8 +167,14 @@ textarea {
 
 .row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 🔥 FIX CHÍNH */
+  gap: 12px;
+}
+
+.row input,
+.row select {
+  width: 100%;
+  min-width: 0; /* 🔥 cực quan trọng */
 }
 
 .row > div {
@@ -205,19 +199,6 @@ textarea {
   padding: 15px;
   border-radius: 10px;
   line-height: 1.6;
-}
-
-/* THEMES */
-.default {
-  color: #eee;
-}
-
-.dark {
-  color: #bbb;
-}
-
-.romantic {
-  color: #ffcad4;
 }
 
 /* BUTTON */

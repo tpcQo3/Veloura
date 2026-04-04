@@ -23,7 +23,7 @@ function updatePreview() {
   const theme = document.getElementById("theme").value;
   const preview = document.getElementById("preview");
 
-  preview.className = theme;
+  preview.className = "";
   preview.innerHTML = parseMarkdown(content);
 
   document.getElementById("count").innerText =
