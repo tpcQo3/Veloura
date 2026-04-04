@@ -1,56 +1,11 @@
+/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-
   background: #f5f5f5;
   color: #222;
-  transition: background 0.5s ease, color 0.4s ease;
-}
 
-body input,
-body textarea,
-body select {
-  background: #f9f9f9;
-  color: #222;
-}
-
-body.dark {
-  background: radial-gradient(circle at top, #2a2733, #12121a);
-  color: #eee;
-}
-
-body.dark .card {
-  background: rgba(20,20,25,0.85);
-  backdrop-filter: blur(12px);
-    box-shadow:
-    0 10px 40px rgba(0,0,0,0.6),
-    0 0 20px rgba(212,175,55,0.1);
-}
-
-/* input */
-body.dark input,
-body.dark textarea,
-body.dark select {
-  background: #1a1a22;
-  color: #eee;
-}
-
-body.romantic {
-  background: linear-gradient(135deg, #3b1f2b, #1a0f14);
-  color: #ffd6e0;
-}
-
-body.romantic .card {
-  background: rgba(255,192,203,0.08);
-  backdrop-filter: blur(10px);
-}
-
-/* input */
-body.romantic input,
-body.romantic textarea,
-body.romantic select {
-  background: rgba(255,255,255,0.1);
-  color: #ffd6e0;
+  transition: background 0.4s ease, color 0.3s ease;
 }
 
 .wrapper {
@@ -59,27 +14,34 @@ body.romantic select {
   padding: 20px;
 }
 
+/* ===== CARD ===== */
 .card {
   width: 100%;
   max-width: 600px;
   background: white;
-  color: #222;
-  backdrop-filter: blur(12px);
-
   padding: 20px;
   border-radius: 16px;
+
+  transition: all 0.3s ease;
+}
+
+/* ===== TEXT ===== */
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #e0c27a;
 }
 
 label {
+  display: block;
+  margin-top: 12px;
   font-size: 12.5px;
   font-weight: 500;
-  margin-top: 12px;
-  display: block;
-  letter-spacing: 0.2px;
   opacity: 0.7;
   color: inherit;
 }
 
+/* ===== INPUT ===== */
 input,
 textarea,
 select {
@@ -92,7 +54,16 @@ select {
 
   outline: none;
   font-size: 14px;
-  transition: all 0.3s ease;
+
+  background: #f9f9f9;
+  color: inherit;
+
+  transition: all 0.25s ease;
+}
+
+textarea {
+  height: 140px;
+  resize: none;
 }
 
 input:focus,
@@ -102,8 +73,77 @@ select:focus {
   box-shadow: 0 0 0 2px rgba(212,175,55,0.2);
 }
 
+/* ===== PLACEHOLDER ===== */
+::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+/* ===== TOOLBAR ===== */
+.toolbar {
+  display: flex;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.toolbar button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  background: #5a5ae6;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== COUNT ===== */
+.count {
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: right;
+  opacity: 0.6;
+}
+
+/* ===== ROW (FIX CHÍNH) ===== */
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.row > div {
+  width: 100%;
+}
+
+.row input,
+.row select {
+  width: 100%;
+  min-width: 0;
+}
+
+/* ===== HINT ===== */
+.hint {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ===== PREVIEW ===== */
+.preview-box {
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.03);
+}
+
+#preview {
+  background: inherit;
+  color: inherit;
+  padding: 10px;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+/* ===== BUTTON ===== */
 button {
-  transition: all 0.3s ease;
   margin-top: 15px;
   width: 100%;
   padding: 14px;
@@ -116,6 +156,8 @@ button {
 
   background: linear-gradient(135deg, #d4af37, #b8962e);
   color: black;
+
+  transition: all 0.25s ease;
 }
 
 button:hover {
@@ -127,96 +169,44 @@ button:active {
   transform: scale(0.97);
 }
 
-h1 {
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  color: #e0c27a;
+/* ===== DARK THEME ===== */
+body.dark {
+  background: radial-gradient(circle at top, #2a2733, #12121a);
+  color: #eee;
 }
 
-textarea {
-  height: 140px;
-  resize: none;
+body.dark .card {
+  background: rgba(20,20,25,0.9);
+  backdrop-filter: blur(12px);
 }
 
-.toolbar {
-  display: flex;
-  gap: 8px;
-  margin-top: 5px;
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background: #1a1a22;
+  color: #eee;
 }
 
-.toolbar button {
-  padding: 6px 10px;
-  border: none;
-  border-radius: 6px;
-  background: #5a5ae6;
-  color: white;
-  cursor: pointer;
+/* ===== ROMANTIC THEME ===== */
+body.romantic {
+  background: linear-gradient(135deg, #3b1f2b, #1a0f14);
+  color: #ffd6e0;
 }
 
-.count {
-  font-size: 12px;
-  margin-top: 5px;
-  text-align: right;
-  color: #aaa;
+body.romantic .card {
+  background: rgba(255,192,203,0.08);
+  backdrop-filter: blur(10px);
 }
 
-.row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 🔥 FIX */
-  gap: 12px;
+body.romantic input,
+body.romantic textarea,
+body.romantic select {
+  background: rgba(255,255,255,0.1);
+  color: #ffd6e0;
 }
 
-.row input,
-.row select {
-  width: 100%;
-  min-width: 0; /* 🔥 FIX */
-}
-
-input,
-textarea,
-select,
-label {
-  color: inherit;
-}
-
-::placeholder {
-  color: inherit;
-  opacity: 0.5;
-}
-
-.hint {
-  color: inherit;
-  opacity: 0.6;
-}
-
-.preview-box {
-  margin-top: 15px;
-  padding: 15px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
-}
-
-#preview {
-  background: inherit;
-  color: inherit;
-  padding: 15px;
-  border-radius: 10px;
-  line-height: 1.6;
-}
-
-/* BUTTON */
-.submit {
-  margin-top: 15px;
-  width: 100%;
-  padding: 14px;
-  background: linear-gradient(135deg, #d4af37, #b8962e);
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-@media (max-width: 500px) {
+/* ===== MOBILE ===== */
+@media (max-width: 520px) {
   .row {
     grid-template-columns: 1fr;
   }
